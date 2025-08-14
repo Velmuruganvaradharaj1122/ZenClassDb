@@ -5,4 +5,4 @@ db.users.insertMany([
     { name: "Karthik", email: "karthik@example.com", batch: "FSD-Oct2020", mentor_name: "Deva", codekata_score: 95 },
     { name: "Divya", email: "divya@example.com", batch: "FSD-Oct2020", mentor_name: "Deva", codekata_score: 110 }
   ])
-  
+   
