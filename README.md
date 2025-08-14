@@ -23,7 +23,7 @@ Run these commands in the MongoDB shell (`mongosh`) after switching to your data
 use zenClassDB
 
 
-1️)1Topics and Tasks in October 2020
+1️)Topics and Tasks in October 2020
 js
 db.topics.find({ date: { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } })
 db.tasks.find({ date: { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } })
