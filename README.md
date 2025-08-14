@@ -23,23 +23,23 @@ Run these commands in the MongoDB shell (`mongosh`) after switching to your data
 use zenClassDB
 
 
-1️⃣ Topics and Tasks in October 2020
+1️)1Topics and Tasks in October 2020
 js
 db.topics.find({ date: { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } })
 db.tasks.find({ date: { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } })
-2️⃣ Company Drives Between 15–31 Oct 2020
+2️) Company Drives Between 15–31 Oct 2020
 js
 db.company_drives.find({ drive_date: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") } })
-3️⃣ Company Drives and Students Who Appeared
+3️) Company Drives and Students Who Appeared
 js
 db.company_drives.find({}, { company: 1, drive_date: 1, students_appeared: 1 })
-4️⃣ CodeKata Scores by User
+4️) CodeKata Scores by User
 js
 db.codekata.find({}, { user_name: 1, problems_solved: 1 })
-5️⃣ Mentors with More Than 15 Mentees
+5️) Mentors with More Than 15 Mentees
 js
 db.mentors.find({ $expr: { $gt: [{ $size: "$mentees" }, 15] } })
-6️⃣ Users Absent and Didn’t Submit Tasks (15–31 Oct)
+6️) Users Absent and Didn’t Submit Tasks (15–31 Oct)
 js
 db.attendance.aggregate([
   {
