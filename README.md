@@ -25,11 +25,11 @@ use zenClassDB
 
 1️)Topics and Tasks in October 2020
 js
-db.topics.find({ date: { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } })
-db.tasks.find({ date: { $gte: ISODate("2020-10-01"), $lte: ISODate("2020-10-31") } })
+db.topics.find({ date: { $gte: Date("2020-10-01"), $lte: Date("2020-10-31") } })
+db.tasks.find({ date: { $gte: Date("2020-10-01"), $lte: Date("2020-10-31") } })
 2️) Company Drives Between 15–31 Oct 2020
 js
-db.company_drives.find({ drive_date: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") } })
+db.company_drives.find({ drive_date: { $gte: Date("2020-10-15"), $lte: Date("2020-10-31") } })
 3️) Company Drives and Students Who Appeared
 js
 db.company_drives.find({}, { company: 1, drive_date: 1, students_appeared: 1 })
@@ -44,7 +44,7 @@ js
 db.attendance.aggregate([
   {
     $match: {
-      date: { $gte: ISODate("2020-10-15"), $lte: ISODate("2020-10-31") },
+      date: { $gte: Date("2020-10-15"), $lte: Date("2020-10-31") },
       status: "absent"
     }
   },
@@ -59,8 +59,8 @@ db.attendance.aggregate([
               $and: [
                 { $eq: ["$user_name", "$$uname"] },
                 { $eq: ["$submitted", false] },
-                { $gte: ["$date", ISODate("2020-10-15")] },
-                { $lte: ["$date", ISODate("2020-10-31")] }
+                { $gte: ["$date", Date("2020-10-15")] },
+                { $lte: ["$date", Date("2020-10-31")] }
               ]
             }
           }
